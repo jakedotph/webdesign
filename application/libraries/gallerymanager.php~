@@ -34,7 +34,8 @@ class GalleryManager
 	
 	public function generate_name($des_username,$des_id,$image_id)
 	{
-		return $des_username."_".$des_id."_".$image_id.".jpg";
+		//return $des_username."_".$des_id."_".$image_id.".jpg";
+		return $des_id."_".$image_id.".jpg";
 	}
 	
 	public function update_image_data($des_id,$image_id,$image_name,$image_des)
@@ -58,7 +59,7 @@ class GalleryManager
 		
 		$sql = "Delete from DESIGNER_GALLERY where image_id = '".$image_id."'";
 		return $exec = $this->CI->db->query($sql);
-	}
+	}	
 	
 	public function get_all_images($des_id)
 	{						
