@@ -17,10 +17,10 @@ CREATE TABLE IF NOT EXISTS DESIGNER(
 	des_fname char(30) not null,						
 	des_mname char(30) null,							
 	des_lname char(30) not null,						
-	des_contact_no char(15) not null,						
-	des_email_add char(30) not null,
-	des_location char(50) not null,
-	des_about text null,											
+	contact_no char(15) not null,						
+	email_add char(30) not null,
+	location char(50) not null,
+	about text null,											
 	des_status tinyint default 0,						
 	primary key(des_id)	
 );
@@ -34,10 +34,10 @@ CREATE TABLE IF NOT EXISTS DESIGNER_ACCOUNT(
 
 CREATE TABLE IF NOT EXISTS DESIGNER_GALLERY(
 	des_id int not null,
-	image_id int not null auto_increment,	
+	image_id int not null auto_increment,
+	file_name varchar(30) null,
 	image_name varchar(30) null,
-	image_desc text null,
-	file_name varchar(30) null,		
+	image_desc text null,							
 	primary key(image_id,des_id)
 );
 
