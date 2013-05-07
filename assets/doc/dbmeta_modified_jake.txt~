@@ -1,0 +1,94 @@
+CREATE DATABASE DOTPH_WEBDESIGN;
+USE DOTPH_WEBDESIGN;
+
+/*
+	Removed
+		des_username
+		primary_key(des_username)
+	Renamed
+		all fields. prepend 'des_'
+**/
+CREATE TABLE DESIGNER(
+	des_id int not null auto_increment,	
+	des_fname varchar(30) not null,
+	des_mname varchar(30) null,
+	des_lname varchar(30) not null,
+	des_age int not null,
+	des_contact_no varchar(15) not null,
+	des_email_add varchar(30) not null,
+	des_location varchar(50) not null,
+	des_about text null,
+	des_status tinyint default 0,
+	primary key(des_id)
+);
+
+/*
+	Renamed
+		DESIGNER_ACCNT - DESIGNER_ACCOUNT
+		password - des_password
+**/
+
+CREATE TABLE DESIGNER_ACCOUNT(
+	des_id int not null,
+	des_username varchar(30) not null,
+	des_password varchar(20) not null,
+	primary key(des_id,des_username)
+);
+
+/*
+	Renamed
+		ADMIN_ACCNT - ADMIN_ACCOUNT
+		password - adm_password
+**/
+CREATE TABLE ADMIN_ACCOUNT(
+	adm_username varchar(30) not null,
+	adm_password varchar(20) not null,
+	primary key(adm_username)
+);
+
+/*
+	Renamed
+		image_name - site_name
+		image_desc - site_desc
+**/
+CREATE TABLE DESIGNER_GALLERY(
+	des_id int not null,
+	image_id int not null auto_increment,
+	site_name varchar(30) null,
+	site_desc text null,
+	primary key(image_id,des_id)
+);
+
+/*
+	Dropped table
+		CLIENT_REQUEST
+		
+	Added tables
+		REQUEST
+		REQUEST_DESIGNER
+**/
+
+CREATE TABLE IF NOT EXISTS REQUEST(
+	request_id int(10) not null auto_increment,
+	cl_name char(150) NOT NULL,
+	cl_location TEXT,
+	cl_contact_no CHAR(15),
+	cl_email_add CHAR(30),
+	designer_name char(100)  NOT NULL,
+	request_status tinyint default 0,		
+	PRIMARY KEY (request_id)
+);
+
+CREATE TABLE IF NOT EXISTS REQUEST_DESIGNER(
+	request_id int(10) not null,
+	des_id int not null,
+	contacted tinyint default 0,		
+	accepted tinyint default 0,		
+	PRIMARY KEY (request_id)
+);
+
+alter table DESIGNER_ACCNT add constraint foreign key(des_id) references DESIGNER(des_id);
+
+alter table DESIGNER_GALLERY add constraint foreign key(des_id) references DESIGNER(des_id);
+
+alter table CLIENT_REQUEST add constraint foreign key(des_id) references DESIGNER(des_id);
