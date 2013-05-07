@@ -116,13 +116,13 @@ class Main extends CI_Controller
 		
 		$config['upload_path'] = '.'.UPLOADGALLERYDIRNAME;
 		$config['allowed_types'] = 'jpg|png';
-		$config['file_name'] = $gmgr->generate_name($this->desdata->des_username,$this->desdata->des_id,$image_id);
+		$config['file_name'] = $gmgr->generate_name($this->desdata->des_id,$image_id);
 		
 		$this->load->library('upload',$config);
 		
 		if ( ! $this->upload->do_upload())
 		{	
-			$gmgr->delete_image($this->desdata->des_username,$this->desdata->des_id,$image_id);
+			$gmgr->delete_image($this->desdata->des_id,$image_id);
 			$message["error"] = $this->upload->display_errors();
 			$this->load_gallery($message);			
 		}
@@ -179,7 +179,7 @@ class Main extends CI_Controller
 		
 		$image_id = $this->input->post("image_id");
 		$message = array();
-		if(!$gmgr->delete_image($desdata->des_username,$desdata->des_id,$image_id))
+		if(!$gmgr->delete_image($desdata->des_id,$image_id))
 		{
 			$message["error"] = "Unable to delete image. Please try again later";			
 		}

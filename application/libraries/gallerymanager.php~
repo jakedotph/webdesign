@@ -32,9 +32,8 @@ class GalleryManager
 		}
 	}
 	
-	public function generate_name($des_username,$des_id,$image_id)
-	{
-		//return $des_username."_".$des_id."_".$image_id.".jpg";
+	public function generate_name($des_id,$image_id)
+	{		
 		return $des_id."_".$image_id.".jpg";
 	}
 	
@@ -45,9 +44,9 @@ class GalleryManager
 		return $exec;
 	}
 	
-	public function delete_image($des_username,$des_id,$image_id)
+	public function delete_image($des_id,$image_id)
 	{		
-		$path = UPLOADGALLERYDIR.$this->generate_name($des_username,$des_id,$image_id);
+		$path = UPLOADGALLERYDIR.$this->generate_name($des_id,$image_id);
 		if(file_exists($path))
 		{
 			if(unlink($path))
@@ -81,7 +80,7 @@ class GalleryManager
 			foreach($images as $image)
 			{
 				$imagenames[$intCtr]["ID"] = $image->image_id;
-				$imagenames[$intCtr]["URL"] = $this->generate_name($desdata->des_username,$des_id,$image->image_id);
+				$imagenames[$intCtr]["URL"] = $this->generate_name($des_id,$image->image_id);
 				$imagenames[$intCtr]["Name"] = $image->image_name;
 				$imagenames[$intCtr]["Description"] = $image->image_desc;
 				$intCtr++;
