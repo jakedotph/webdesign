@@ -1,0 +1,9 @@
+Gallery Manager Library
+---Designer's gallery manipulation
+
+	Loading Gallery Manager Instance
+		$this->load->library('gallerymanager');
+		$gmgr = $this->gallerymanager;
+		
+	Adding image to the gallery
+	

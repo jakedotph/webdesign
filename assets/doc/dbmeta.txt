@@ -1,0 +1,57 @@
+CREATE DATABASE DOTPH_WEBDESIGN;
+USE DOTPH_WEBDESIGN;
+
+CREATE TABLE DESIGNER(
+	des_id int not null auto_increment,
+	des_username varchar(30) not null,	
+	des_fname varchar(30) not null,
+	des_mname varchar(30) null,
+	des_lname varchar(30) not null,
+	age int not null,
+	contact_no varchar(15) not null,
+	email_add varchar(30) not null,
+	location varchar(50) not null,
+	password varchar(20) not null,
+	about text null,
+	status tinyint default 0,
+	primary key(des_id,des_username)
+);
+
+CREATE TABLE DESIGNER_ACCNT(
+	des_id int not null,
+	des_username varchar(30) not null,
+	password varchar(20) not null,
+	primary key(des_id,des_username)
+);
+
+CREATE TABLE ADMIN_ACCNT(
+	adm_username varchar(30) not null,
+	password varchar(20) not null,
+	primary key(adm_username)
+);
+
+CREATE TABLE DESIGNER_GALLERY(
+	des_id int not null,
+	image_id int not null auto_increment,
+	image_name varchar(30) null,
+	image_desc text null,
+	primary key(image_id,des_id)
+);
+
+CREATE TABLE CLIENT_REQUEST(
+	req_id int not null auto_increment,
+	des_id int not null,
+	cl_fname varchar(30) not null,
+	cl_lname varchar(30) not null,
+	cl_mname varchar(30) null,
+	cl_email_add varchar(30) not null,
+	cl_location text null,
+	cl_contact_no varchar(15) null,
+	primary key(req_id,des_id)
+);
+
+alter table DESIGNER_ACCNT add constraint foreign key(des_id) references DESIGNER(des_id);
+
+alter table DESIGNER_GALLERY add constraint foreign key(des_id) references DESIGNER(des_id);
+
+alter table CLIENT_REQUEST add constraint foreign key(des_id) references DESIGNER(des_id);

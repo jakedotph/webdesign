@@ -1,0 +1,15 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$("div.error").hide();
+		$("div.error").fadeIn(200).fadeOut(200).fadeIn(200);
+		$("div.error").click(function(){
+			$(this).fadeOut(500);
+		});
+	});
+</script>
+
+<div class = "error">
+<p><? echo $error?></p>
+</div>

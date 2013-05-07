@@ -1,0 +1,21 @@
+<strong>Gallery</strong>
+<hr>
+<?php				
+	$this->load->helper('url');
+	$this->load->helper('html');		
+	if(count($images)>0)
+	{		
+		foreach($images as $image)
+		{
+			$prop = array(
+				'src' => $image,
+				'height' => '100',
+				'width' => '100'
+			);
+			echo img($prop);
+		}
+	}
+	else
+		echo 'Empty gallery';	
+?>
+<hr>

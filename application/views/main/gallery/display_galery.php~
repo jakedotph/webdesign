@@ -1,0 +1,11 @@
+<?=link_tag('assets/css/style.css');?>
+<div class="container">
+	<div class="header">
+	Gallery
+	</div>
+			
+	<p>This is the gallery</p>	
+
+	<?$this->load->view('main/profile/designer_info.php');?>
+	
+</div>

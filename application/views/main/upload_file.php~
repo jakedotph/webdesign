@@ -1,0 +1,9 @@
+<?php
+	$this->load->helper('form'); 
+	echo form_open_multipart('user/upload_file');
+?>
+
+<input type="file" name="userfile" size="20" /> 
+<br>
+<input type="submit" value="Upload" />
+</form>

@@ -1,0 +1,307 @@
+body
+{
+	font-family : ubuntu light;
+	background-image: url("res/background.gif");
+}
+
+input[type="text"],input[type="password"], textarea
+{
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background: #FFF;
+	border: 1px solid #999;
+	font-size: 13px;
+	padding: 4px;
+}
+
+input[type="submit"],button
+{
+	padding:4px;
+	font-style: normal;
+}
+
+input:focus {
+	border-color: #000;
+}
+
+fieldset > h2 {
+	font-size: 16px;
+	line-height: 1.3;
+	border-bottom: 1px dotted #DFDCD9;
+	margin-bottom: 9px;
+	padding-bottom: 10px;
+}
+
+ul.formlist
+{
+	list-style-type: none;	
+}
+
+ul.formlist > li
+{
+	margin-bottom: 14px;
+	font-size:13;
+}
+
+div.container
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 3px;
+	background-color: white;
+	padding:4px;
+	float: left;	
+}
+
+div.container > div.registerform
+{
+	width: 600px;
+	text-align: left;
+}
+
+div.container > div.header
+{
+	padding: -4px;
+	height : 30px;
+	background-color: black;
+	color:white;
+	text-align: left;	
+}
+
+div.menustrip
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 3px;
+	background-color: white;
+	opacity:0.90;
+	border-color: black;
+	border:1;
+	padding:4px;	
+	margin-top:-18px;	
+	width:250px;	
+	position: fixed;
+}
+
+div.menustrip > div.header, div.container > div.header , div.gallery > div.header
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	margin:-4px;
+	margin-bottom:10px;
+	padding:4px;
+	background-color: #353535;
+	color:white;
+}
+
+div.error
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 3px;	
+	background-color:#DD2929;	
+	text-align:center;	
+	color:#FFFFFF;
+	visibility: false;
+}
+
+div.notify
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 3px;	
+	background-color:#526700;	
+	text-align:center;
+	color:#FFFFFF;
+}
+
+div.menu
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 3px;	
+	background-color: black;
+}
+
+div.menu > ul
+{
+	list-style-type: none;
+	padding:10px;
+}
+
+div.menu > ul > li
+{
+	padding:10px;
+	display: inline;
+	color:white;
+}
+
+div.menu > ul > li > a
+{
+	
+}
+
+div.menu > ul > li > a:link
+{
+	text-decoration:none;
+	color:white;
+}
+
+div.menu > ul > li > a:visited
+{
+	text-decoration:none;
+	color:white;	
+}
+
+div.menu > ul > li > a:hover
+{
+	text-decoration:none;
+	background-color: white;
+	color:black;
+}
+
+div.menu > ul > a:active
+{
+	text-decoration:none;
+	background-color: orange;
+}
+
+div.login
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+}
+
+div.gallery
+{		
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 3px;
+	background-color: white;		
+	padding:4px;
+	float:left;
+	width:98%;
+}	
+
+div.gallery > div.content > div.webpicscontainer
+{	
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 3px;
+	float:left;	
+	background-color: gray;
+	padding:4px;
+	height:120px;
+	width:200px;
+	margin:10px;	
+}
+
+div.gallerydesc
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 0px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 2px;
+	float:left;	
+	background-color: gray;
+	padding:4px;
+	height:122px;
+	width:200px;
+	margin-top:10px;		
+	margin-left:-15px;	
+}
+
+div.gallerydesc > textarea.content
+{
+	height:122px;
+	width:200px;
+	text-align: justify;
+}
+
+div.webpicscontainer > div.header
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	margin:-4px;
+	margin-bottom:10px;
+	padding:4px;
+	background-color: #353535;
+	color:white;
+	text-align: center;
+}
+
+div.change
+{	
+	position:absolute;
+	float:left;
+	width:200px;
+}
+
+div.containerfloat
+{
+	position:absolute;
+   top: 50%;
+   left: 50%;
+   width: 400px;
+   height: 500px;
+   margin-left: -200px; /*set to a negative number 1/2 of your width*/
+   margin-top: -250px; /*set to a negative number 1/2 of your height*/
+   border: 3px solid #C2C2C2;
+   -webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 5px 10px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 3px;
+	background-color:white;
+}
+
+div.containerfloat > div.header
+{	
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	margin:4px;
+	margin-bottom:10px;
+	padding:4px;
+	background-color: #353535;
+	color:white;	
+}
+
+img.webpic
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	height : 100px;
+	width : 200px;
+}
+
+img.editimageimage
+{
+	-webkit-box-shadow: 0 2px 2px 0 #C2C2C2;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	-moz-border-radius: 4px;
+	height : 200px;
+	width : 300px;
+	background-color:white;
+}
+
+

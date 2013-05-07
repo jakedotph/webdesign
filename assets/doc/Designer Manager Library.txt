@@ -1,0 +1,60 @@
+Designer Manager		
+---Creates, Updates and Deletes designer data
+		
+	Loading Designer Manager Instance
+		$this->load->library('designermanager');		
+		$desmgr = $this->designermanager;
+		
+	Creating Designer
+	@params : array of designer data (associative)
+	@returns : true | false
+		$data["des_username"] = "jake";
+		$data["des_fname"] = "jake";
+		$data["des_mname"] = "riano";
+		$data["des_lname"] = "capangpangan";
+		$data["email_add"] = "jr.capangpangan@domreg.ph";
+		$data["contact_no"] = "1234";
+		$data["password"] = "1234";
+		$data["about"] = "Test Account";
+			
+		if(!$desmgr->create_designer($data))
+		{
+			echo $desmgr->get_error_message();
+		}
+	
+	Fetch Designer Data
+		//Finding designer without knowing des_id
+		@params : username
+		@returns : array of designer data (associative) | false
+		if(!$desdata = $desmgr->fetch_designer("username"))
+		{
+			echo $desmgr->get_error_message();
+		}
+		//Finding designer given the des_id
+		@params : des_id
+		@returns : array of designer data (associative) | false
+		if(!$desdata = $desmgr->check_exists("des_id"))
+		{
+			echo $desmgr->get_error_message();
+		}
+		
+	Update Designer Data
+		@params : array of of one or more designer data (associative)
+		@returns : true | false
+		$data["status"] = 1; //if you want to enable the account
+		if(!$desmgr->update_designer("des_id",$data))
+		{
+			echo $desmgr->get_error_message();
+		}
+				
+	Delete Designer
+		@params : des_id
+		@returns : true | false
+		if(!$desmgr->delete_designer("des_id"))
+		{
+			echo $desmgr->get_error_message();
+		}
+		
+	Get Error Message (Not accurate when normally called)
+		@returns : string of error message
+		$desmgr->get_error_message();

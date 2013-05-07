@@ -1,0 +1,44 @@
+<?=link_tag('assets/css/style.css');?>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){		
+		$("#galleryheader").click(function(){
+			$("#gallerycontent").slideToggle(500);
+		});
+	});
+</script>
+
+<div class = "gallery">
+	<div class="header" id = "galleryheader">
+	Gallery
+	</div>
+	<div class ="content" id = "gallerycontent">
+		<? if(!isset($images)) : ?>
+		
+		<div align="center">
+			Your gallery is empty
+			<br>
+			<?
+			$this->load->helper('form');
+			echo form_open('designer/gallery/upload');
+			echo form_submit('upload','Upload Now');
+			echo form_close();
+			?>
+		</div>	
+		
+		<? else : ?>
+			<? $images = array("assets/res/test.jpg","assets/res/test.jpg","assets/res/test.jpg","assets/res/test.jpg"); ?>
+			<? foreach($images as $image) : ?>		
+			<div class="webpicscontainer">
+				<img class = "webpic" src="<?=base_url($image);?>" alt="" align="center">
+				<div class="header">
+					Jake
+				</div>
+			</div>
+			<? endforeach; ?>
+			
+		<? endif; ?>
+	</div>
+</div>

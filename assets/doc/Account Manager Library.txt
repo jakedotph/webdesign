@@ -1,0 +1,49 @@
+Account Manager
+---Approves and Disables designer account
+---Provides login and logout, session support
+
+	Designer Account
+	----------------
+	
+	Loading Accout Manager Instance
+		$this->load->library('accountmanager');
+		$accmgr = $this->accountmanager;
+		
+	Approving Designer - Creates Designer Login Account
+	@params : des_id
+	@returns : true | false
+		if(!$accmgr->approve_designer("des_id"))
+			echo $accmgr->get_error_message();
+
+	Disabling Designer Account
+	@params : des_id
+	@returns : true | false	
+		if(!$accmgr->disable_designer("des_id"))
+			echo $accmgr->get_error_message();
+			
+	Get Error Message (Not accurate when normally called)
+		@returns : string of error message
+		$accmgr->get_error_message();		
+	
+	
+	Session Management
+	------------------
+	
+	Validating designer's username and password for login
+	@params : username, password
+	@returns : des_id | false;
+		if(!$des_id = $accmgr->validate_designer("username","password")
+			echo $accmgr->get_error_message();
+			
+	Creates Session
+	@params : des_id
+		$accmgr->create_session("des_id");
+	
+	Checks Session - checks whether designer's session is not expired
+	@params : des_id
+	@returns : des_id | false
+		if(!$des_id = $accmgr->check_session())
+			echo $accmgr->get_error_message();
+			
+	Close Session - called when designer wants to log-out
+		$accmgr->close_session();

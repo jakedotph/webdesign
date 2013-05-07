@@ -1,0 +1,72 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class AccountManager
+{
+	public function __construct()
+	{
+		$this->load->helper('db');
+		$this->load->database();
+	}
+	
+	public function validate_user($username,$password)
+	{
+		$sql = "Select des_id from DESIGNER_ACCOUNT where username = '$username' and password = '$password'";
+		$query = $this->db->query($sql);
+		
+		if($query->num_rows()==1)
+		{
+			$result = $query->result();
+			return $result->des_id;
+		}
+		
+		return false;
+	}
+	
+	public function check_exists($username)
+	{
+		$sql = "Select username from DESIGNER_ACCOUNT where username = '$username'";
+		$query = $this->db->query($sql);
+		
+		if($query->num_rows()==1)
+		{
+			$result = $query->result();
+			return $result->username;
+		}
+		
+		return false;
+	}
+	
+	public function register_user($username,$password)
+	{
+		if($this->check_exists($username))
+			return false;
+		
+		$sql = "Insert into DESIGNER_ACCOUNT(username,password) values ('$username','$password')";
+		$exec = $this->db->query($sql);
+		
+		if($exec)
+		{
+			$des_id = $this->validate_user($username,$password);
+			return $des_id;
+		}
+		
+		return false;
+	}
+	
+	public function disable_user($username)
+	{
+		if(!$this->check_exists($username))
+			return true;
+		
+		$sql = "Delete from DESIGNER_ACCOUNT where username = '$username'";
+		$exec = $this->db->query($sql);
+
+		if($exec)
+		{						
+			/*
+				Add removal of designer's web images and requests command here			
+			*/
+		}
+		
+		return $exec;
+	}
+}
