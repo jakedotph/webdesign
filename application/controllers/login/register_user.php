@@ -1,5 +1,11 @@
 <?php
 
+/*
+	Register_User controller
+	
+		Provides all controls in designer registration
+**/
+
 class Register_User extends CI_Controller
 {
 	public function __construct()
@@ -32,17 +38,18 @@ class Register_User extends CI_Controller
 		$data["des_fname"] = $this->input->post("des_fname");
 		$data["des_mname"] = $this->input->post("des_mname");
 		$data["des_lname"] = $this->input->post("des_lname");
-		$data["email_add"] = $this->input->post("email_add");
-		$data["contact_no"] = $this->input->post("contact_no");
-		$data["password"] = $this->input->post("password");
-		$data["location"] = $this->input->post("location");
-		$data["about"] = $this->input->post("about");
+		$data["des_email_add"] = $this->input->post("des_email_add");
+		$data["des_contact_no"] = $this->input->post("des_contact_no");
+		$data["des_password"] = $this->input->post("des_password");
+		$data["des_location"] = $this->input->post("des_location");
+		$data["des_about"] = $this->input->post("des_about");
 		
 		if(!$desmgr->create_designer($data))
-		{			
+		{	
+		
 			$message["error"] = $desmgr->get_error_message();
 			$dataall["data"] = $data;	
-			$this->load_main($message,$dataall);
+			$this->load_main($message,$dataall);				
 		}
 		else
 			redirect('login/notify');

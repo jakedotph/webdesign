@@ -33,23 +33,23 @@
 			</li>
 			
 			<li>Contact Number
-				<br><? echo isset($data["contact_no"])?form_input('contact_no',$data["contact_no"]):form_input('contact_no')?>
+				<br><? echo isset($data["des_contact_no"])?form_input('des_contact_no',$data["des_contact_no"]):form_input('des_contact_no')?>
 			</li>
 		
 			<li>Email Address
-				<br><td><? echo isset($data["email_add"])?form_input('email_add',$data["email_add"]):form_input('email_add')?>
+				<br><td><? echo isset($data["des_email_add"])?form_input('des_email_add',$data["des_email_add"]):form_input('des_email_add')?>
 			</li>
 			
 			<li>Location
-				<br><td><? echo isset($data["location"])?form_input('location',$data["location"]):form_input('location')?>
+				<br><td><? echo isset($data["des_location"])?form_input('des_location',$data["des_location"]):form_input('des_location')?>
 			</li>
 			
 			<li>About yourself
-				<br><? echo isset($data["about"])?form_input('about',$data["about"]):form_input('about')?>
+				<br><? echo isset($data["des_about"])?form_input('des_about',$data["des_about"]):form_input('des_about')?>
 			</li>
 			
 			<li>Password
-				<br><? echo form_password('password');?>
+				<br><? echo form_password('des_password');?>
 			</li>
 			
 			<li style = "float:right; margin-right:20px">
